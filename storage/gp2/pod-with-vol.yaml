@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: custompod
+  labels:
+    app: storage-app
+spec:
+  containers:
+    - name: storage-app
+      image: nginx
+      volumeMounts:
+      - mountPath: "/var/www/html"
+        name: external
+  volumes:
+    - name: external 
+      persistentVolumeClaim:
+        claimName: ssd
