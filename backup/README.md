@@ -9,7 +9,7 @@ https://heptio.github.io/velero/v0.11.0/aws-config.html
 ## backup entire cluster
 
 ```
-velero backup create nginx-backup
+velero backup create cluster-backup
 ```
 
 ## backup with selector
