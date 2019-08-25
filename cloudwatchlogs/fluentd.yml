@@ -194,7 +194,7 @@ spec:
         image: fluent/fluentd-kubernetes-daemonset:v1.1-debian-cloudwatch
         env:
           - name: REGION
-            value: us-west-2
+            value: eu-central-1
           - name: CLUSTER_NAME
             value: eksworkshop-eksctl
         resources:

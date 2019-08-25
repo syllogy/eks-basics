@@ -21,7 +21,7 @@ aws iam get-role-policy --role-name $ROLE_NAME --policy-name Logs-Policy-For-Wor
 ! Update REGION and CLUSTER_NAME environment variables in fluentd.yml as required. They are set to us-west-2 and eksworkshop-eksctl by default.
 
 ```
-kubectl apply -f ~/environment/fluentd/fluentd.yml
+kubectl apply -f fluentd.yml
 ```
 
 
