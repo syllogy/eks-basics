@@ -15,7 +15,7 @@ aws iam put-role-policy --role-name $ROLE_NAME --policy-name Logs-Policy-For-Wor
 test role
 ```
 aws iam get-role-policy --role-name $ROLE_NAME --policy-name Logs-Policy-For-Worker
-
+```
 
 
 ! Update REGION and CLUSTER_NAME environment variables in fluentd.yml as required. They are set to us-west-2 and eksworkshop-eksctl by default.
