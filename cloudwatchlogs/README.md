@@ -17,8 +17,17 @@ test role
 aws iam get-role-policy --role-name $ROLE_NAME --policy-name Logs-Policy-For-Worker
 ```
 
+create namespace
 
-! Update REGION and CLUSTER_NAME environment variables in fluentd.yml as required. They are set to us-west-2 and eksworkshop-eksctl by default.
+```
+kubectl create ns amazon-cloudwatch
+```
+
+set params
+```
+kubectl create configmap cluster-info \
+--from-literal=cluster.name=cluster_name \
+--from-literal=logs.region=region_name -n amazon-cloudwatch
 
 ```
 kubectl apply -f fluentd.yml
