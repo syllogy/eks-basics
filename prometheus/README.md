@@ -71,6 +71,7 @@ spec:
 ```
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
+metadata:
   labels:
     app: prometheus-operator-twelve
     chart: prometheus-operator-6.4.3
