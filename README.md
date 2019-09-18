@@ -1,21 +1,36 @@
-# eks-basics
+# `eks-basics` - Instructions for bootstraping an EKS cluster with cluster backups, logs exporting & monitoring 
 
+`eksctl` is a simple CLI tool for creating clusters on EKS - Amazon's new managed Kubernetes service for EC2. It is written in Go, and uses CloudFormation.
 
-# Test the cluster  
+## Instal eksctl
 
-
-```
-kubectl get nodes # if we see our 3 nodes, we know we have authenticated correctly
-```
-
-
-```bash
-
-INSTANCE_PROFILE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_NAME | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="InstanceProfileARN") | .OutputValue')
-ROLE_NAME=$(aws cloudformation describe-stacks --stack-name $STACK_NAME | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="InstanceRoleARN") | .OutputValue' | cut -f2 -d/)
-echo "export ROLE_NAME=${ROLE_NAME}" >> ~/.bash_profile
-echo "export INSTANCE_PROFILE_ARN=${INSTANCE_PROFILE_ARN}" >> ~/.bash_profile
+To download the latest release, run:
 
 ```
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+```
+You will need to have AWS API credentials configured. What works for AWS CLI or any other tools (kops, Terraform etc), should be sufficient. You can use [`~/.aws/credentials` file][awsconfig]
+[awsconfig]: https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
 
+You will also need [AWS IAM Authenticator for Kubernetes](https://github.com/kubernetes-sigs/aws-iam-authenticator) command (either `aws-iam-authenticator` or `aws eks get-token` (available in version 1.16.156 or greater of AWS CLI) in your `PATH`.
 
+## Create a cluster
+
+To create a basic cluster, run:
+
+```
+eksctl create cluster
+```
+
+A cluster will be created with default parameters
+
+- exciting auto-generated name, e.g. "fabulous-mushroom-1527688624"
+- 2x `m5.large` nodes (this instance type suits most common use-cases, and is good value for money)
+- use official AWS EKS AMI
+- `us-west-2` region
+- dedicated VPC (check your quotas)
+- using static AMI resolver
+
+Once you have created a cluster, you will find that cluster credentials were added in `~/.kube/config`. If you have `kubectl` v1.10.x as well as `aws-iam-authenticator` commands in your PATH, you should be
+able to use `kubectl`. You will need to make sure to use the same AWS API credentials for this also. Check [EKS docs][ekskubectl] for instructions. If you installed `eksctl` via Homebrew, you should have all of these dependencies installed already.
