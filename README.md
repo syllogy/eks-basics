@@ -9,7 +9,7 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download
 sudo mv /tmp/eksctl /usr/local/bin
 ```
 
-<details><summary>More Details</summary>
+<details><summary>eksctl prerequisites</summary>
 <p>
 
 You will need to have AWS API credentials configured. What works for AWS CLI or any other tools (kops, Terraform etc), should be sufficient. You can use [`~/.aws/credentials` file][awsconfig]
