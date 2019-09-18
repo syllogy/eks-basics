@@ -30,7 +30,7 @@ kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_i
 
 <details><summary>See the deployment yaml</summary>
 <p>
-```
+```yaml
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
