@@ -56,10 +56,12 @@ Follow [Install helm][helmreadme]
 
 [helmreadme]: https://github.com/doitintl/eks-basics/blob/project_init/helm/README.md
 
+### Use helm to deploy Prometheus and Grafana to your cluster
+
+Follow [Adding prometheus and grafana to the cluster][prometheusreadme]
+
+[prometheusreadme]: https://github.com/doitintl/eks-basics/blob/project_init/helm/README.md
 
 
-<details><summary></summary>
-<p>
 
-</p>
-</details>
+
