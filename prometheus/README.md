@@ -30,6 +30,7 @@ kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_i
 
 <details><summary>See the deployment yaml</summary>
 <p>
+
 ```yaml
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -61,7 +62,8 @@ kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_i
 
 <details><summary>See the service yaml</summary>
 <p>
-```
+
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -87,7 +89,8 @@ kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_i
 
 <details><summary>See the service monitor yaml</summary>
 <p>
-```
+
+```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
