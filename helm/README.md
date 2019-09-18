@@ -15,7 +15,7 @@ chmod +x get_helm.sh
 ### Apply tiller Service Account to your cluster
 
 ```
-
+curl https://raw.githubusercontent.com/doitintl/eks-basics/project_init/helm/rbac.yaml > rbac.yaml
 kubectl apply -f rbac.yaml
 
 ```
