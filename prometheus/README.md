@@ -25,7 +25,11 @@ You will see different K8S dashboards added by default.
 
 ## Example deployment with /metrics exposing
 
+kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_init/prometheus/example-deployment.yaml
 
+
+<details><summary>See the deployment yaml</summary>
+<p>
 ```
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -47,8 +51,16 @@ spec:
         ports:
         - containerPort: 8080
 ```
+</p>
+</details>
+
 
 ## Expose the service
+
+kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_init/prometheus/example-service.yaml
+
+<details><summary>See the service yaml</summary>
+<p>
 ```
 apiVersion: v1
 kind: Service
@@ -66,8 +78,15 @@ spec:
   selector:
     app: twelve-clouds
 ```
+</p>
+</details>
 
 ## Apply the matching service monitor 
+
+kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_init/prometheus/example-service-monitor.yaml
+
+<details><summary>See the service monitor yaml</summary>
+<p>
 ```
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -90,3 +109,5 @@ spec:
     matchLabels:
       app: twelve-clouds
 ```
+</p>
+</details>

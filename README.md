@@ -61,18 +61,5 @@ Follow [Install helm][helmreadme]
 <details><summary></summary>
 <p>
 
-A cluster will be created with default parameters
-- exciting auto-generated name, e.g. "fabulous-mushroom-1527688624"
-- 2x `m5.large` nodes (this instance type suits most common use-cases, and is good value for money)
-- use official AWS EKS AMI
-- `us-west-2` region
-- dedicated VPC (check your quotas)
-- using static AMI resolver
-
-Once you have created a cluster, you will find that cluster credentials were added in `~/.kube/config`. If you have `kubectl` v1.10.x as well as `aws-iam-authenticator` commands in your PATH, you should be
-able to use `kubectl`. You will need to make sure to use the same AWS API credentials for this also. Check [EKS docs][ekskubectl] for instructions.
-
-[ekskubectl]: https://docs.aws.amazon.com/eks/latest/userguide/configure-kubectl.html
-
 </p>
 </details>
