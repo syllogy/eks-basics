@@ -9,6 +9,7 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download
 sudo mv /tmp/eksctl /usr/local/bin
 ```
 You will need to have AWS API credentials configured. What works for AWS CLI or any other tools (kops, Terraform etc), should be sufficient. You can use [`~/.aws/credentials` file][awsconfig]
+
 [awsconfig]: https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
 
 You will also need [AWS IAM Authenticator for Kubernetes](https://github.com/kubernetes-sigs/aws-iam-authenticator) command (either `aws-iam-authenticator` or `aws eks get-token` (available in version 1.16.156 or greater of AWS CLI) in your `PATH`.
