@@ -1,7 +1,4 @@
-# install helm
-
-
-## Installation 
+# Install helm
 
 ### Install helm client to your machine
 ```
@@ -17,6 +14,7 @@ chmod +x get_helm.sh
 ```
 curl https://raw.githubusercontent.com/doitintl/eks-basics/project_init/helm/rbac.yaml > rbac.yaml
 kubectl apply -f rbac.yaml
+helm init --service-account tiller
 
 ```
 
