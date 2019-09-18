@@ -29,8 +29,6 @@ To create a basic cluster, run:
 eksctl create cluster
 ```
 
-A cluster will be created with default parameters
-
 <details><summary>More Details</summary>
 <p>
 
@@ -58,7 +56,15 @@ To create a basic cluster, run:
 eksctl create cluster
 ```
 
-<details><summary>More Details</summary>
+## Install Prometheus and Grafana
+
+### Make sure helm is installed
+
+[Install helm][https://github.com/doitintl/eks-basics/blob/project_init/helm/README.md]
+
+
+
+<details><summary></summary>
 <p>
 
 A cluster will be created with default parameters

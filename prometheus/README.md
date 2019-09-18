@@ -1,6 +1,4 @@
-# Install prometheus
-
-Make sure helm is installed to the cluster (see https://github.com/doitintl/eks-basics/tree/master/helm)
+# Adding prometheus and grafana to the cluster
 
 ## Installation 
 
@@ -25,9 +23,8 @@ http://localhost:3000
 You will see different K8S dashboards added by default.
 
 
-# Scraping from your service /metrics endpoint
+## Example deployment with /metrics exposing
 
-## Example deployment and service with /metrics exposing
 
 ```
 apiVersion: apps/v1beta1
@@ -49,7 +46,10 @@ spec:
         image: karthequian/prom:latest
         ports:
         - containerPort: 8080
----
+```
+
+## Expose the service
+```
 apiVersion: v1
 kind: Service
 metadata:

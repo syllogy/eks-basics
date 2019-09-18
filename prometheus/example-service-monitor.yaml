@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: prometheus-operator-twelve
+    chart: prometheus-operator-6.4.3
+    heritage: Tiller
+    release: prometheus-operator
+  name: prometheus-operator-twelve
+  namespace: monitoring
+spec:
+  endpoints:
+  - path: /metrics # REPLACE WITH THE ENDPOINT YOUR APP IS EXPOSING THE METRICS WITH
+    port: http # REPLACE WITH THE NAMED PORT OF YOUR SERVICE
+  namespaceSelector:
+    matchNames:
+    - default # REPLACE WITH THE NAMESPACE OF YOUR SERVICE
+  selector:
+    matchLabels:
+      app: twelve-clouds
