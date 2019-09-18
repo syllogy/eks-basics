@@ -1,7 +1,5 @@
 # `eks-basics` - Instructions for bootstraping an EKS cluster with cluster backups, logs exporting & monitoring 
 
-`eksctl` is a simple CLI tool for creating clusters on EKS - Amazon's new managed Kubernetes service for EC2. It is written in Go, and uses CloudFormation.
-
 ## Instal eksctl
 
 To download the latest release, run:
@@ -10,8 +8,7 @@ To download the latest release, run:
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 ```
-You will need to have AWS API credentials configured. What works for AWS CLI or any other tools (kops, Terraform etc), should be sufficient. You can use [`~/.aws/credentials` file][awsconfig]
-[awsconfig]: https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
+You will need to have AWS API credentials configured. What works for AWS CLI or any other tools (kops, Terraform etc), should be sufficient. You can use [`~/.aws/credentials` file][awsconfig]: https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
 
 You will also need [AWS IAM Authenticator for Kubernetes](https://github.com/kubernetes-sigs/aws-iam-authenticator) command (either `aws-iam-authenticator` or `aws eks get-token` (available in version 1.16.156 or greater of AWS CLI) in your `PATH`.
 
