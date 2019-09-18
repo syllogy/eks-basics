@@ -48,19 +48,12 @@ able to use `kubectl`. You will need to make sure to use the same AWS API creden
 </p>
 </details>
 
-## Create a cluster
-
-To create a basic cluster, run:
-
-```
-eksctl create cluster
-```
-
 ## Install Prometheus and Grafana
 
 ### Make sure helm is installed
 
-[Install helm][https://github.com/doitintl/eks-basics/blob/project_init/helm/README.md]
+[Install helm][helm-readme]
+[helm-readme]: https://github.com/doitintl/eks-basics/blob/project_init/helm/README.md]
 
 
 
