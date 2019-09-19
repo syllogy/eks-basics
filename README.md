@@ -52,7 +52,7 @@ able to use `kubectl`. You will need to make sure to use the same AWS API creden
 
 ### Make sure helm is installed
 
-Follow [Install helm][helmreadme]
+Follow [Installing helm][helmreadme]
 
 [helmreadme]: https://github.com/doitintl/eks-basics/blob/project_init/helm/README.md
 

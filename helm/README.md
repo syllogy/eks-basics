@@ -13,8 +13,39 @@ chmod +x get_helm.sh
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/doitintl/eks-basics/project_init/helm/rbac.yaml
-helm init --service-account tiller
+```
 
+<details><summary>See the service account yaml</summary>
+<p>
+
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system
+```
+</p>
+</details>
+
+
+### Init helm
+
+```
+helm init --service-account tiller
 ```
 
 
