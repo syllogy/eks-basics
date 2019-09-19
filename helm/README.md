@@ -47,5 +47,9 @@ subjects:
 ```
 helm init --service-account tiller
 ```
+### 
+The Prometheus Operator should be installed now, Verify it with:
 
-
+```
+kubectl --namespace monitoring get pods -l "release=prometheus-operator"
+```

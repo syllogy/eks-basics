@@ -20,7 +20,13 @@ Access the grafana dashboard over this adderss
 http://localhost:3000
 ```
 
-You will see different K8S dashboards added by default.
+The default credentials are:
+```
+username: admin
+password: prom-operator
+```
+
+You will see different k8s dashboards added by default.
 
 
 ## Example deployment with /metrics exposing
